@@ -3,9 +3,40 @@ import Code
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-st.header("A/B test minimum sample size calculator")
-st.divider()
-st.subheader("Sample Size Calculator terminology and Instructions")
+import terminology as t
+
+st.set_page_config(layout='wide')
+# Custom CSS styling for the divider
+# Custom CSS styling for the divider
+divider_style = """
+<style>
+.custom-divider {
+    margin: 0;
+    padding: 0;
+    border-top: 1px;
+}
+</style>
+"""
+
+# Apply the custom CSS styling
+st.markdown(divider_style, unsafe_allow_html=True)
+
+
+st.title("A/B Test Minimum Sample Size Calculator")
+
+st.markdown("### Sample Size Calculator Terminology")
+dis = t.displayterminology()
+
+dis.display_BCR()
+st.markdown('<hr class="custom-divider">', unsafe_allow_html=True)
+dis.display_MDE()
+st.markdown('<hr class="custom-divider">', unsafe_allow_html=True)
+dis.display_siglevel()
+st.markdown('<hr class="custom-divider">', unsafe_allow_html=True)
+dis.display_statpower()
+st.markdown('<hr class="custom-divider">', unsafe_allow_html=True)
+
+
 #inputs
 st.sidebar.title("Parameters")
 variations=st.sidebar.number_input("Variations",min_value=1)
@@ -15,7 +46,8 @@ ramp_up=st.sidebar.number_input("Percent of Users to be Involved in the Experime
 baseline_val=st.sidebar.number_input("Baseline convertion percent [0.01-1.0]")
 mde=st.sidebar.text_input("Minimum Detectable Effect [0.01-1.0] ") 
 alpha=st.sidebar.number_input("Alpha",value=0.05,min_value=0.01,max_value=0.21)
-beta=st.sidebar.number_input("Beta",value=0.80,min_value=0.01,max_value=0.9)
+beta=st.sidebar.number_input("Statistical Power",value=0.80,min_value=0.01,max_value=0.9)
+show_analysis_button = st.sidebar.button("show analysis")
 beta=1-beta
 
 flag=0 #to validate start and end event numbers
@@ -32,7 +64,7 @@ else:
 #analysis
 if flag==0:    
     flag=0
-    if st.sidebar.button("Show analysis"):
+    if show_analysis_button:
         sample_sizes={}
         st.columns(1)
         if mde:
