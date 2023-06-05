@@ -121,7 +121,7 @@ class displayterminology():
             - What's worth it: a number you choose, based on what you consider worth it to take the time and resources to run the experiment. For example, a testing agency may, by default, set the MDE at 10% for every experiment at because that's the minimum needed to declare a win for the client.
             - Organizational maturity: a large, mature testing organization, with a lot of traffic, may set the MDE at 1-3% because, through ongoing optimization, getting gains any higher would be unrealistic.
 
-            *General Uplift to expect :* 
+        *General Uplift to expect :* 
         - Conversion Rate Optimisation experts agree it is very difficult to get an uplift of more than 10% on a single webpage
         - Achieving uplift beyond 10% requires “innovative” changes to your site or your business (for example, lowering your prices, changing you offers, rebranding or restructuring your website.)
         - Less dramatic “iterative” changes (such as adjusting a button colour, headline or image) generally produce an increase of less than 7%. It is possible that this kind of change would produce no change or, even, a negative uplift.
