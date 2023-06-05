@@ -4,10 +4,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import terminology as t
+from PIL import Image
 
-st.beta_set_page_config(page_title='MSScalculator', page_icon = favicon, layout = 'wide', initial_sidebar_state = 'auto')
+img = Image.open('calculator.png')
+st.set_page_config(page_title='MSScalculator', page_icon = img, layout = 'wide', initial_sidebar_state = 'auto')
 # favicon being an object of the same kind as the one you should provide st.image() with (ie. a PIL array for example) or a string (url or local file path)
-st.set_page_config(layout='wide')
 # Custom CSS styling for the divider
 # Custom CSS styling for the divider
 divider_style = """
